@@ -25,10 +25,10 @@
 
 <table>
   <tr>
-    <td><img src="img/kanoulas.jpg" style="height:130px;border-radius:50%" alt="Evangelos Kanoulas"></td>
-    <td><img src="img/kanoulas.jpg" style="height:130px;border-radius:50%" alt="Panagiotis Eustratiadis"></td>
-    <td><img src="img/kanoulas.jpg" style="height:130px;border-radius:50%" alt="Mark Sanderson"></td>
-    <td><img src="img/kanoulas.jpg" style="height:130px;border-radius:50%" alt="Jamie Callan"></td>
+    <td><img src="img/kanoulas.jpeg" style="height:130px;border-radius:50%" alt="Evangelos Kanoulas"></td>
+    <td><img src="img/eustratiadis.jpeg" style="height:130px;border-radius:50%" alt="Panagiotis Eustratiadis"></td>
+    <td><img src="img/sanderson.jpeg" style="height:130px;border-radius:50%" alt="Mark Sanderson"></td>
+    <td><img src="img/callan.jpeg" style="height:130px;border-radius:50%" alt="Jamie Callan"></td>
   </tr>
   <tr>
     <td>
