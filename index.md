@@ -30,27 +30,63 @@ There is limited work on combining the answers of multiple LLMs and therefore th
 
 # Organizers
 
-<table>
-  <tr>
-    <td><img src="img/kanoulas.jpeg" style="height:130px;border-radius:50%" alt="Evangelos Kanoulas"></td>
-    <td><img src="img/eustratiadis.jpeg" style="height:130px;border-radius:50%" alt="Panagiotis Eustratiadis"></td>
-    <td><img src="img/sanderson.jpeg" style="height:130px;border-radius:50%" alt="Mark Sanderson"></td>
-    <td><img src="img/callan.jpeg" style="height:130px;border-radius:50%" alt="Jamie Callan"></td>
-  </tr>
+<style>
+  .organizers-table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 24px;
+    margin: 20px 0;
+  }
+
+  .organizers-table td {
+    width: 25%;
+    text-align: center;
+    padding: 12px;
+    vertical-align: top;
+  }
+
+  .organizers-table img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .name {
+    font-size: 16px;
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+
+  .affiliation {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.4;
+  }
+</style>
+
+<table class="organizers-table">
   <tr>
     <td>
+      <img src="img/kanoulas.jpeg" alt="Evangelos Kanoulas">
       <div class="name">Evangelos Kanoulas</div>
       <div class="affiliation">University of Amsterdam, The Netherlands</div>
     </td>
     <td>
+      <img src="img/eustratiadis.jpeg" alt="Panagiotis Eustratiadis">
       <div class="name">Panagiotis Eustratiadis</div>
       <div class="affiliation">University of Amsterdam, The Netherlands</div>
     </td>
     <td>
+      <img src="img/sanderson.jpeg" alt="Mark Sanderson">
       <div class="name">Mark Sanderson</div>
       <div class="affiliation">RMIT University, Australia</div>
     </td>
     <td>
+      <img src="img/callan.jpeg" alt="Jamie Callan">
       <div class="name">Jamie Callan</div>
       <div class="affiliation">Carnegie Mellon University, USA</div>
     </td>
