@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Million LLMs Track</title>
+    <style>
+        /* Base styles */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Responsive image handling */
+        .hero-image {
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            display: block;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+
+        /* Responsive typography */
+        h1 { font-size: 2.5rem; margin-top: 2rem; }
+        h2 { font-size: 2rem; margin-top: 1.8rem; }
+        h3 { font-size: 1.5rem; margin-top: 1.5rem; }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            h3 { font-size: 1.3rem; }
+            p, li { font-size: 1rem; line-height: 1.6; }
+        }
+
+        /* Section styling */
+        .section {
+            margin: 2rem 0;
+            padding: 1rem;
+            background: white;
+            border-radius: 8px;
+        }
+
+        /* Lists */
+        ul, ol {
+            padding-left: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        /* Enhanced organizers table */
+        .organizers-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 24px;
+            margin: 20px 0;
+        }
+
+        @media (max-width: 768px) {
+            .organizers-table {
+                border-spacing: 12px;
+            }
+            
+            .organizers-table tr {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .organizers-table td {
+                flex: 0 0 50%;
+                margin-bottom: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .organizers-table td {
+                flex: 0 0 100%;
+            }
+        }
+
+        .organizers-table td {
+            width: 25%;
+            text-align: center;
+            padding: 12px;
+            vertical-align: top;
+        }
+
+        .organizers-table img {
+            height: 130px;
+            width: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 16px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .organizers-table img:hover {
+            transform: scale(1.05);
+        }
+
+        .name {
+            font-size: 16px;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+        }
+
+        .affiliation {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.4;
+        }
+
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            cursor: pointer;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+        }
+
+        @media print {
+            .back-to-top {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="img/MillionLLMs_vanGogh_style.webp" alt="Million LLMs Track Illustration" class="hero-image" />
+
+    <h1>Million LLMs Track</h1>
+
+    <div class="section">
+        <h2>Overview</h2>
+        <p>In the era of Large Language Models (LLMs), we envision a transformation in how information is served to users. Imagine a world where:</p>
+        <ul>
+            <li>Content providers like Wikipedia, NY Times, Reddit, and Elsevier offer information through specialized LLMs</li>
+            <li>Some LLMs provide cited responses with original source materials, while others offer direct answers</li>
+            <li>Different levels of cooperation exist among LLMs, from those sharing embeddings and internal weights to those providing only text outputs</li>
+            <li>Various access models coexist, from free-to-query to cost-based services</li>
+            <li>Millions of LLMs operate with distinct, sometimes overlapping expertise domains</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <h2>Research Context</h2>
+        <p>The challenge bears similarities to established fields such as:</p>
+        <ul>
+            <li>Distributed Information Retrieval (DIR)</li>
+            <li>Federated Search (FS)</li>
+            <li>Meta-search</li>
+        </ul>
+        <p>A key distinction lies in the nature of collecting statistics: while traditional search engines return thousands of results enabling reliable statistics, LLM responses are typically brief, making expertise assessment more challenging.</p>
+    </div>
+
+    <div class="section">
+        <h2>Key Challenges</h2>
+        
+        <h3>1. Evaluation Framework Development</h3>
+        <p>While we propose a specific simulation and evaluation framework, our assumptions may not fully reflect real-world conditions. Bridging this gap and developing more accurate evaluation methodologies remains a crucial challenge.</p>
+
+        <h3>2. LLM Expertise Quantification</h3>
+        <p>Unlike traditional DIR systems where search engines provide extensive results, LLMs typically respond with concise answers, sometimes with limited references. This brevity complicates the assessment of LLM expertise.</p>
+
+        <h3>3. LLM Ranking Optimization</h3>
+        <p>Even with robust expertise assessment, determining optimal LLM ranking strategies for meta-LLM agents remains complex. While this year's track focuses primarily on LLM ranking, future iterations may explore this challenge further.</p>
+
+        <h3>4. Answer Synthesis</h3>
+        <p>The challenge of effectively combining multiple LLM responses into coherent, comprehensive answers represents an open research question with limited existing work.</p>
+    </div>
+
+    <div class="section">
+        <h2>Track Objectives</h2>
+        <p>We invite the Information Retrieval community to:</p>
+        <ol>
+            <li>Explore methods for selective LLM querying</li>
+            <li>Develop robust evaluation frameworks</li>
+            <li>Build a collaborative research community around these challenges</li>
+        </ol>
+    </div>
+
+    <div class="section">
+        <h2>Organizers</h2>
+        <table class="organizers-table">
+            <tr>
+                <td>
+                    <img src="img/kanoulas.jpeg" alt="Evangelos Kanoulas">
+                    <div class="name">Evangelos Kanoulas</div>
+                    <div class="affiliation">University of Amsterdam, The Netherlands</div>
+                </td>
+                <td>
+                    <img src="img/eustratiadis.jpeg" alt="Panagiotis Eustratiadis">
+                    <div class="name">Panagiotis Eustratiadis</div>
+                    <div class="affiliation">University of Amsterdam, The Netherlands</div>
+                </td>
+                <td>
+                    <img src="img/sanderson.jpeg" alt="Mark Sanderson">
+                    <div class="name">Mark Sanderson</div>
+                    <div class="affiliation">RMIT University, Australia</div>
+                </td>
+                <td>
+                    <img src="img/callan.jpeg" alt="Jamie Callan">
+                    <div class="name">Jamie Callan</div>
+                    <div class="affiliation">Carnegie Mellon University, USA</div>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <a href="#" class="back-to-top">↑</a>
+
+    <script>
+        // Back to top button functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const backToTop = document.querySelector('.back-to-top');
+            
+            window.addEventListener('scroll', () => {
+                if (window.pageYOffset > 100) {
+                    backToTop.classList.add('visible');
+                } else {
+                    backToTop.classList.remove('visible');
+                }
+            });
+
+            backToTop.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+        });
+    </script>
+</body>
+</html>
