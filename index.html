@@ -15,55 +15,138 @@
     </figure>
 
     <h1>TREC 2025: Million LLMs Track</h1>
-    <p class="tagline">Defining "Search" in a world where the front-facing entity for every organization is a Conversational AI.</p>
+    <p class="tagline">Benchmarking the Discovery of Expert LLMs</p>
+    <nav>
+      <a href="#" title="Track GitHub">Track GitHub</a>
+      <a href="#" title="Data Access">Data Access</a>
+      <a href="#" title="Slack">Slack</a>
+      <a href="#" title="Evaluation Scripts">Evaluation Scripts</a>
+    </nav>
 
-    <div class="section">
-        <h2>Overview</h2>
-        <p>In the era of Large Language Models (LLMs), we envision a transformation in how information is served to users. Imagine a world where:</p>
-        <ul>
-            <li>Content providers like Wikipedia, NY Times, Reddit, and Elsevier offer information through specialized LLMs</li>
-            <li>Some LLMs provide cited responses with original source materials, while others offer direct answers</li>
-            <li>Different levels of cooperation exist among LLMs, from those sharing embeddings and internal weights to those providing only text outputs</li>
-            <li>Various access models coexist, from free-to-query to cost-based services</li>
-            <li>Millions of LLMs operate with distinct, sometimes overlapping expertise domains</li>
-        </ul>
+     <div class="section" id="introduction">
+      <h2>1. Introduction</h2>
+      <p>The Million LLMs Track introduces a novel challenge: ranking large language models (LLMs) based on their expected ability to answer specific user queries.</p>
+      <p>As organizations deploy ensembles of LLMs—ranging from general-purpose to domain-specific—it becomes crucial to determine which models to consult for a given task. This track focuses on evaluating systems that can effectively identify the most capable LLM(s) for a query, without issuing new queries to the models.</p>
+      <p>Participants are provided with LLM responses and metadata in advance, and must rank the LLMs for each test query based solely on this information.</p>
     </div>
 
-    <div class="section">
-        <h2>Research Context</h2>
-        <p>The challenge bears similarities to established fields such as:</p>
-        <ul>
-            <li>Distributed Information Retrieval (DIR)</li>
-            <li>Federated Search (FS)</li>
-            <li>Meta-search</li>
-        </ul>
-        <p>A key distinction lies in the nature of collecting statistics: while traditional search engines return thousands of results enabling reliable statistics, LLM responses are typically brief, making expertise assessment more challenging.</p>
+     <div class="section" id="task">
+      <h2>2. Task</h2>
+      <h3>LLM Ranking Task</h3>
+      <p>Given a user query, your system must rank a fixed set of LLMs. The goal is to predict which LLMs are most likely to produce high-quality answers.</p>
+      <p>Your submission should consist of a ranked list of LLMs for each query.</p>
     </div>
 
-    <div class="section">
-        <h2>Key Challenges</h2>
-
-        <h3>1. Evaluation Framework Development</h3>
-        <p>While we propose a specific simulation and evaluation framework, our assumptions may not fully reflect real-world conditions. Bridging this gap and developing more accurate evaluation methodologies remains a crucial challenge.</p>
-
-        <h3>2. LLM Expertise Quantification</h3>
-        <p>Unlike traditional DIR systems where search engines provide extensive results, LLMs typically respond with concise answers, sometimes with limited references. This brevity complicates the assessment of LLM expertise.</p>
-
-        <h3>3. LLM Ranking Optimization</h3>
-        <p>Even with robust expertise assessment, determining optimal LLM ranking strategies for meta-LLM agents remains complex. While this year's track focuses primarily on LLM ranking, future iterations may explore this challenge further.</p>
-
-        <h3>4. Answer Synthesis</h3>
-        <p>The challenge of effectively combining multiple LLM responses into coherent, comprehensive answers represents an open research question with limited existing work.</p>
+     <div class="section" id="data">
+      <h2>3. Data Provided</h2>
+      <p>The dataset is split into two parts:</p>
+      <ul>
+        <li>
+          <strong>Training Set</strong>
+          <ul>
+            <li>A set of training queries (without ground truth labels)</li>
+            <li>Precomputed responses from all LLMs</li>
+            <li>Response metadata</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Development Set</strong>
+          <ul>
+            <li>A set of development queries</li>
+            <li>A qrel with an expertise label for each query–LLM pair</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Test Set</strong>
+          <ul>
+            <li>A set of held-out queries</li>
+          </ul>
+        </li>
+      </ul>
+      <p>Use the discovery data to predict the expertise of each LLM and develop your ranking system, then submit your results on the test set.</p>
+      <p><em>Note: No access to raw document collections or LLMs is required. The task is designed to benchmark ranking systems under fixed conditions using provided data.</em></p>
     </div>
 
-    <div class="section">
-        <h2>Track Objectives</h2>
-        <p>We invite the Information Retrieval community to:</p>
-        <ol>
-            <li>Explore methods for selective LLM querying</li>
-            <li>Develop robust evaluation frameworks</li>
-            <li>Build a collaborative research community around these challenges</li>
-        </ol>
+     <div class="section" id="submission">
+      <h2>4. Submission Guidelines</h2>
+      <h3>Submission Format</h3>
+      <p>CSV or TSV with the following columns:</p>
+      <ul>
+        <li><code>query_id, LLM_id, rank, score, team_id</code></li>
+      </ul>
+      <h3>Runs Allowed</h3>
+      <p>Each team may submit up to <strong>3 official runs</strong>.</p>
+      <h3>Submission Deadline</h3>
+      <p><strong>September 2025</strong></p>
+      <h3>Submission Portal</h3>
+      <p><a href="#" title="Codalab submission">Codalab link TBD</a></p>
+      <h3>System Description</h3>
+      <p>You must provide a short description of your method, including any training data or models used.</p>
+    </div>
+
+     <div class="section" id="evaluation">
+      <h2>5. Evaluation</h2>
+      <p>Submissions will be evaluated using relevance-based metrics.</p>
+      <h3>Evaluation Metrics</h3>
+      <ul>
+        <li><strong>nDCG@10</strong> – Discounted gain over relevance grades</li>
+        <li><strong>MRR</strong> – Mean reciprocal rank</li>
+      </ul>
+      <p>Evaluation will be based on hidden ground-truth labels. Results will be reported in aggregate and per query category.</p>
+    </div>
+
+     <div class="section" id="timeline">
+      <h2>6. Timeline</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Event</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>July 1, 2025</td>
+            <td>Training and development data released</td>
+          </tr>
+          <tr>
+            <td>September 2025</td>
+            <td>Test queries released</td>
+          </tr>
+          <tr>
+            <td>September 2025</td>
+            <td>Submission deadline</td>
+          </tr>
+          <tr>
+            <td>October 2025</td>
+            <td>Evaluation &amp; results shared</td>
+          </tr>
+          <tr>
+            <td>November 2025</td>
+            <td>TREC conference</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+     <div class="section" id="participation">
+      <h2>7. Participation &amp; Contact</h2>
+      <p>We welcome participation from:</p>
+      <ul>
+        <li>Academic researchers</li>
+        <li>Industry teams</li>
+        <li>Independent developers</li>
+        <li>Open-source contributors</li>
+      </ul>
+      <!--
+      <h3>Track Organizers</h3>
+      <ul class="contact-list">
+        <li><strong>Evangelos Kanoulas</strong> – University of Amsterdam</li>
+        <li>✉️ Contact: <a href="mailto:organizer@example.com">organizer@example.com</a></li>
+        <li>💬 Slack: <a href="#" title="Invite to Slack">Invite link</a></li>
+        <li>🧵 Mailing List: <a href="#" title="Subscribe to mailing list">Subscribe here</a></li>
+      </ul>
+    -->
     </div>
 
     <div class="section">
