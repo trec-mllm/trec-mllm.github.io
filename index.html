@@ -19,15 +19,19 @@
     <nav>
       <a href="#" title="Track GitHub">Track GitHub</a>
       <a href="#" title="Data Access">Data Access</a>
-      <a href="#" title="Slack">Slack</a>
+      <a href="https://app.slack.com/client/T43BZ4E0K/D08E5S14HSR" title="Slack">Slack</a>
       <a href="#" title="Evaluation Scripts">Evaluation Scripts</a>
     </nav>
 
      <div class="section" id="introduction">
       <h2>1. Introduction</h2>
-      <p>The Million LLMs Track introduces a novel challenge: ranking large language models (LLMs) based on their expected ability to answer specific user queries.</p>
-      <p>As organizations deploy ensembles of LLMs—ranging from general-purpose to domain-specific—it becomes crucial to determine which models to consult for a given task. This track focuses on evaluating systems that can effectively identify the most capable LLM(s) for a query, without issuing new queries to the models.</p>
-      <p>Participants are provided with LLM responses and metadata in advance, and must rank the LLMs for each test query based solely on this information.</p>
+      <p>The Million LLMs Track introduces a novel challenge: ranking large language models (LLMs) based on 
+        their expected ability to answer specific user queries.</p>
+      <p>As organizations deploy ensembles of LLMs—ranging from general-purpose to domain-specific—it becomes 
+        crucial to determine which models to consult for a given task. This track focuses on evaluating systems 
+        that can effectively identify the most capable LLM(s) for a query, without issuing new queries to the models.</p>
+      <p>Participants are provided with LLM responses and metadata in advance, and must rank the LLMs for each test 
+        query based solely on this information.</p>
     </div>
 
      <div class="section" id="task">
@@ -42,7 +46,7 @@
       <p>The dataset is split into two parts:</p>
       <ul>
         <li>
-          <strong>Training Set</strong>
+          <strong>Discovery Set</strong>
           <ul>
             <li>A set of training queries (without ground truth labels)</li>
             <li>Precomputed responses from all LLMs</li>
@@ -65,6 +69,37 @@
       </ul>
       <p>Use the discovery data to predict the expertise of each LLM and develop your ranking system, then submit your results on the test set.</p>
       <p><em>Note: No access to raw document collections or LLMs is required. The task is designed to benchmark ranking systems under fixed conditions using provided data.</em></p>
+    
+    <!-- Example: Add after the Data Provided section -->
+<div class="section" id="downloads">
+  <h2>Downloadable Files</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>File Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a href="https://drive.google.com/file/d/11haneITYfbZeDQ_Jwc_nIwJC5IfhbOJ4/view?usp=drive_link" target="_blank"><discovery_data_1 class="json"></discovery_data_1></a></td>
+        <td>Training queries and precomputed LLM responses.</td>
+      </tr>
+      <tr>
+        <td><a href="https://drive.google.com/file/d/1OASydzmu8WTQQwZusWgqkcqdkGwhDRyh/view?usp=drive_link" target="_blank"><discovery_metadata_1 class="json"></discovery_metadata_1></a></td>
+        <td>Development set with expertise labels for each query–LLM pair.</td>
+      </tr>
+      <tr>
+        <td><a href="https://drive.google.com/file/d/1fMJ4hvIdsYwbtuuSm8wBX91SBQw32gS3/view?usp=drive_link" target="_blank"><discovery_data_2 class="json"></discovery_data_2></a></td>
+        <td>Held-out test queries for final evaluation.</td>
+      </tr>
+      <tr>
+        <td><a href="https://drive.google.com/file/d/1l4nEBTimaPUq9FtemH029L0J7hh4Tuv6/view?usp=drive_link" target="_blank"><discovery_metadata_2 class="json"></discovery_metadata_2></a></td>
+        <td>Held-out test queries for final evaluation.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
     </div>
 
      <div class="section" id="submission">
