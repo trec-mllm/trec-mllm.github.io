@@ -37,8 +37,9 @@
      <div class="section" id="task">
       <h2>2. Task</h2>
       <h3>LLM Ranking Task</h3>
-      <p>Given a user query, your system must rank a fixed set of LLMs. The goal is to predict which LLMs are most likely to produce high-quality answers.</p>
-      <p>Your submission should consist of a ranked list of LLMs for each query.</p>
+      <p>Given a user query, and a set of LLM ids, your system must rank the LLM ids. The goal is to predict which LLMs 
+        have the highest expertise on the query and are most likely to contribute in a high-quality answers.</p>
+      <p>Your submission should consist of a ranked list of LLM ids for each query.</p>
     </div>
 
      <div class="section" id="data">
@@ -46,22 +47,25 @@
       <p>The dataset is split into two parts:</p>
       <ul>
         <li>
-          <strong>Discovery Set</strong>
+          <strong>Discovery Set</strong>: Ranking LLM ids on the basis of their expertise is not possible if you do not know 
+          anything about these LLMs. The discovery set provides a set of queries and precomputed responses from all LLMs, 
+          along with metadata that can be used to predict the expertise of each LLM. 
           <ul>
-            <li>A set of training queries (without ground truth labels)</li>
+            <li>A set of training queries</li>
             <li>Precomputed responses from all LLMs</li>
             <li>Response metadata</li>
           </ul>
         </li>
         <li>
-          <strong>Development Set</strong>
+          <strong>Development Set</strong>: This dataset is used to develop and evaluate your ranking system, and will imitate the
+          final evaluation conditions, by NIST. It includes:
           <ul>
             <li>A set of development queries</li>
-            <li>A qrel with an expertise label for each query–LLM pair</li>
+            <li>A qrel with an expertise label for each query-LLM pair</li>
           </ul>
         </li>
         <li>
-          <strong>Test Set</strong>
+          <strong>Test Set</strong>: This is a held-out set of queries for final evaluation. It includes:
           <ul>
             <li>A set of held-out queries</li>
           </ul>
@@ -82,20 +86,20 @@
     </thead>
     <tbody>
       <tr>
-        <td><a href="https://drive.google.com/file/d/11haneITYfbZeDQ_Jwc_nIwJC5IfhbOJ4/view?usp=drive_link" target="_blank"><discovery_data_1 class="json"></discovery_data_1></a></td>
-        <td>Training queries and precomputed LLM responses.</td>
+        <td><a href="https://drive.google.com/file/d/11haneITYfbZeDQ_Jwc_nIwJC5IfhbOJ4/view?usp=drive_link" target="_blank"><discovery_data_1 class="json">discovery_data_1</a></td>
+        <td>LLM expertise discovery queries and precomputed LLM responses.</td>
       </tr>
       <tr>
-        <td><a href="https://drive.google.com/file/d/1OASydzmu8WTQQwZusWgqkcqdkGwhDRyh/view?usp=drive_link" target="_blank"><discovery_metadata_1 class="json"></discovery_metadata_1></a></td>
-        <td>Development set with expertise labels for each query–LLM pair.</td>
+        <td><a href="https://drive.google.com/file/d/1OASydzmu8WTQQwZusWgqkcqdkGwhDRyh/view?usp=drive_link" target="_blank"><discovery_metadata_1 class="json">discovery_metadata_1</a></td>
+        <td>LLM expertise discovery queries, precomputed LLM responses, along with metadata (the same as discovery_data_1 but with logprobs).</td>
       </tr>
       <tr>
-        <td><a href="https://drive.google.com/file/d/1fMJ4hvIdsYwbtuuSm8wBX91SBQw32gS3/view?usp=drive_link" target="_blank"><discovery_data_2 class="json"></discovery_data_2></a></td>
-        <td>Held-out test queries for final evaluation.</td>
+        <td><a href="https://drive.google.com/file/d/1fMJ4hvIdsYwbtuuSm8wBX91SBQw32gS3/view?usp=drive_link" target="_blank"><discovery_data_2 class="json">discovery_data_2</a></td>
+        <td>LLM expertise discovery queries and precomputed LLM responses.</td>
       </tr>
       <tr>
-        <td><a href="https://drive.google.com/file/d/1l4nEBTimaPUq9FtemH029L0J7hh4Tuv6/view?usp=drive_link" target="_blank"><discovery_metadata_2 class="json"></discovery_metadata_2></a></td>
-        <td>Held-out test queries for final evaluation.</td>
+        <td><a href="https://drive.google.com/file/d/1l4nEBTimaPUq9FtemH029L0J7hh4Tuv6/view?usp=drive_link" target="_blank"><discovery_metadata_2 class="json">discovery_metadata_2</a></td>
+        <td>LLM expertise discovery queries, precomputed LLM responses, along with metadata (the same as discovery_data_2 but with logprobs).</td>
       </tr>
     </tbody>
   </table>
