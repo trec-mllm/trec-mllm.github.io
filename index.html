@@ -120,17 +120,46 @@
 
      <div class="section" id="submission">
       <h2>4. Submission Guidelines</h2>
-      <h3>Submission Format</h3>
-      <p>CSV or TSV with the following columns:</p>
-      <ul>
-        <li><code>query_id, LLM_id, rank, score, team_id</code></li>
-      </ul>
+
+      <p>We will be following the classic TREC submission formatting, which is outlined below. White space is used to separate columns. 
+        The width of the columns in the format is not important, but it is crucial to have exactly six columns per line with at least 
+        one space between the columns.</p>
+      <code>
+        1 Q0 llmid1 1 2.73 runid1
+        1 Q0 llmid2 1 2.71 runid1
+        1 Q0 llmid3 1 2.61 runid1
+        1 Q0 llmid4 1 2.05 runid1
+        1 Q0 llmid5 1 1.89 runid1
+      </code>
+      <p>Where:</p>
+      <p>The first column is the topic (query) number.</p> 
+      <p>The second column is currently unused and should always be "Q0".</p>
+      <p>The third column is the official identifier of the ranked LLM.</p>
+      <p>The fourth column is the rank at which the LLM is ranked.</p>
+      <p>The fifth column shows the score (integer or floating point) that generated the ranking. This score must be in descending (non-increasing) order.</p>
+      <p>The sixth column is the ID of the run being submitted.</p>
+
+      <h3>Submission Types</h3>
+      <p>The main type of TREC submission is <i>automatic</i>, which means that there is no manual intervention when running the 
+        test queries. This means: You should not adjust your runs, rewrite the query, retrain your model, or make any manual 
+        adjustments after seeing the test queries. Ideally, you should only check the test queries to verify that they ran 
+        properly (i.e., no bugs) before submitting your automatic runs.</p> 
+      <p>However, if you want to have a human in the loop for your run or make any manual adjustments to the model or ranking 
+        after seeing the test queries, you can mark your run as <i>manual</i> and provide a description of the types of alterations 
+        performed. </p>
+      <p>Further, we expect that only the discovery data is used to assess the expertise of each LLM. If this is the case we 
+        mark these submissions as <i>internal</i>. However, if you wish to use external tools, e.g. LLMs, search engines, data, 
+        to verify the expertise of each LLM then you should mark your run as <i>external</i>.</p>
+      
       <h3>Runs Allowed</h3>
-      <p>Each team may submit up to <strong>3 official runs</strong>.</p>
+      <p>Each team may submit up to <strong>5 official runs</strong>.</p>
+
       <h3>Submission Deadline</h3>
       <p><strong>September 2025</strong></p>
+      
       <h3>Submission Portal</h3>
       <p><a href="#" title="Codalab submission">Codalab link TBD</a></p>
+      
       <h3>System Description</h3>
       <p>You must provide a short description of your method, including any training data or models used.</p>
     </div>
