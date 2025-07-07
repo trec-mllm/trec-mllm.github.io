@@ -49,9 +49,13 @@
      <div class="section" id="task">
       <h2>2. Task</h2>
       <h3>LLM Ranking Task</h3>
-      <p>Given a user query, and a set of LLM ids, your system must rank the LLM ids. The goal is to predict which LLMs 
-        have the highest expertise on the query and are most likely to contribute in a high-quality answers.</p>
-      <p>Your submission should consist of a ranked list of LLM ids for each query.</p>
+      <strong> Goal: </strong> 
+      <p> Given a user query and a set of LLM IDs, your system must rank the LLMs by predicted expertise — that is, how 
+        likely each model is to provide a high-quality answer to the query. This task tests your system’s ability to assess 
+        and match LLM capabilities to information needs, before seeing any answers. </p>
+
+      <strong>What you submit:</strong>
+      <p>For each query, submit a ranked list of LLM IDs, ordered from most to least likely to produce a good answer.</p>
     </div>
 
      <div class="section" id="data">
