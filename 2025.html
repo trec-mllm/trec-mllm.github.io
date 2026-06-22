@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TREC 2026: Million LLMs Track</title>
+    <title>TREC 2025: Million LLMs Track</title>
     <link rel="stylesheet" href="template.css">
 </head>
 <body>
     <nav class="year-tabs">
-        <a href="2025.html">2025</a>
-        <a href="index.html" class="active">2026</a>
+        <a href="2025.html" class="active">2025</a>
+        <a href="index.html">2026</a>
     </nav>
 
     <figure style="margin: 0 auto; text-align: center; max-width: 800px;">
@@ -19,7 +19,7 @@
         </figcaption>
     </figure>
 
-    <h1>TREC 2026: Million LLMs Track</h1>
+    <h1>TREC 2025: Million LLMs Track</h1>
     <p class="tagline">Benchmarking the Discovery of Expert LLMs</p>
     <!-- Comment this out
     <nav>
@@ -32,9 +32,9 @@
 
      <div class="section" id="introduction">
       <h2>1. Introduction</h2>
-      <p>The way we search for and access information is rapidly evolving. Instead of retrieving documents and snippets, 
-        users now interact with AI front-ends—Large Language Models (LLMs) that deliver direct, synthesized answers. 
-        In this emerging landscape, the traditional search engine is replaced by an ecosystem of LLMs, each with specialized 
+      <p>The way we search for and access information is rapidly evolving. Instead of retrieving documents and snippets,
+        users now interact with AI front-ends—Large Language Models (LLMs) that deliver direct, synthesized answers.
+        In this emerging landscape, the traditional search engine is replaced by an ecosystem of LLMs, each with specialized
         knowledge, unique capabilities, and distinct access models:
         <ul>
           <li>Some LLMs excel at in-depth answers; others provide concise, factual responses.</li>
@@ -44,21 +44,21 @@
           <li>Some LLMs are designed for specific user groups, such as children or professionals, while others are more general.</li>
         </ul>
       <p>How do we evaluate expertise, compare models, and build reliable multi-agent IR systems in this new world? </p>
-      <p>The Million LLMs Track introduces a novel challenge: ranking large language models (LLMs) based on 
-        their expected ability to answer specific user queries. As organizations deploy ensembles of LLMs—ranging from 
-        general-purpose to domain-specific it becomes crucial to determine which models to consult for a given task. 
-        This track focuses on evaluating systems that can effectively identify the most capable LLM(s) for a query, 
+      <p>The Million LLMs Track introduces a novel challenge: ranking large language models (LLMs) based on
+        their expected ability to answer specific user queries. As organizations deploy ensembles of LLMs—ranging from
+        general-purpose to domain-specific it becomes crucial to determine which models to consult for a given task.
+        This track focuses on evaluating systems that can effectively identify the most capable LLM(s) for a query,
         without issuing new queries to the models.</p>
-      <p>Participants are provided with LLM responses and metadata in advance, and must rank the LLMs for each test 
+      <p>Participants are provided with LLM responses and metadata in advance, and must rank the LLMs for each test
         query based solely on this information.</p>
     </div>
 
      <div class="section" id="task">
       <h2>2. Task</h2>
       <h3>LLM Ranking Task</h3>
-      <strong> Goal: </strong> 
-      <p> Given a user query and a set of LLM IDs, your system must rank the LLMs by predicted expertise — that is, how 
-        likely each model is to provide a high-quality answer to the query. This task tests your system’s ability to assess 
+      <strong> Goal: </strong>
+      <p> Given a user query and a set of LLM IDs, your system must rank the LLMs by predicted expertise — that is, how
+        likely each model is to provide a high-quality answer to the query. This task tests your system’s ability to assess
         and match LLM capabilities to information needs, before seeing any answers. </p>
 
       <strong>What you submit:</strong>
@@ -70,9 +70,9 @@
       <p>The dataset is split into two parts:</p>
       <ul>
         <li>
-          <strong>Discovery Set</strong>: Ranking LLM ids on the basis of their expertise is not possible if you do not know 
-          anything about these LLMs. The discovery set provides a set of queries and precomputed responses from all LLMs, 
-          along with metadata that can be used to predict the expertise of each LLM. 
+          <strong>Discovery Set</strong>: Ranking LLM ids on the basis of their expertise is not possible if you do not know
+          anything about these LLMs. The discovery set provides a set of queries and precomputed responses from all LLMs,
+          along with metadata that can be used to predict the expertise of each LLM.
           <ul>
             <li>A set of training queries</li>
             <li>Precomputed responses from all LLMs</li>
@@ -96,21 +96,10 @@
       </ul>
       <p>Use the discovery data to predict the expertise of each LLM and develop your ranking system, then submit your results on the test set.</p>
       <p><em>Note: No access to raw document collections or LLMs is required. The task is designed to benchmark ranking systems under fixed conditions using provided data.</em></p>
-    
+
     <!-- Example: Add after the Data Provided section -->
   <div class="section" id="downloads">
   <h3>Downloadable Files</h3>
-
-  <p class="data-note"><strong>Note:</strong> The set of LLMs used in 2026 is different from the one used in
-    2025. As a result, there is <strong>no transfer of knowledge</strong> between the two years — a model's
-    expertise on the 2025 data tells you nothing about the 2026 LLMs. Only the <em>lessons learnt</em>
-    (i.e. methods and modelling approaches) carry over. The 2025 files below are provided so that
-    participants can develop and test their methods on last year's data.</p>
-
-  <h4>2026 Files</h4>
-  <p><em>To be uploaded.</em></p>
-
-  <h4>2025 Files</h4>
   <table>
     <thead>
       <tr>
@@ -151,8 +140,8 @@
      <div class="section" id="submission">
       <h2>4. Submission Guidelines</h2>
 
-      <p>We will be following the classic TREC submission formatting, which is outlined below. White space is used to separate columns. 
-        The width of the columns in the format is not important, but it is crucial to have exactly six columns per line with at least 
+      <p>We will be following the classic TREC submission formatting, which is outlined below. White space is used to separate columns.
+        The width of the columns in the format is not important, but it is crucial to have exactly six columns per line with at least
         one space between the columns.</p>
       <code>
         1 Q0 llmid1 1 2.73 runid1<br>
@@ -162,7 +151,7 @@
         1 Q0 llmid5 5 1.89 runid1<br>
       </code>
       <p>Where:<br>
-      The first column is the topic (query) number.<br> 
+      The first column is the topic (query) number.<br>
       The second column is currently unused and should always be "Q0".<br>
       The third column is the official identifier of the ranked LLM.<br>
       The fourth column is the rank at which the LLM is ranked.<br>
@@ -170,26 +159,26 @@
       The sixth column is the ID of the run being submitted.</p>
 
       <h3>Submission Types</h3>
-      <p>The main type of TREC submission is <i>automatic</i>, which means that there is no manual intervention when running the 
-        test queries. This means: You should not adjust your runs, rewrite the query, retrain your model, or make any manual 
-        adjustments after seeing the test queries. Ideally, you should only check the test queries to verify that they ran 
-        properly (i.e., no bugs) before submitting your automatic runs.</p> 
-      <p>However, if you want to have a human in the loop for your run or make any manual adjustments to the model or ranking 
-        after seeing the test queries, you can mark your run as <i>manual</i> and provide a description of the types of alterations 
+      <p>The main type of TREC submission is <i>automatic</i>, which means that there is no manual intervention when running the
+        test queries. This means: You should not adjust your runs, rewrite the query, retrain your model, or make any manual
+        adjustments after seeing the test queries. Ideally, you should only check the test queries to verify that they ran
+        properly (i.e., no bugs) before submitting your automatic runs.</p>
+      <p>However, if you want to have a human in the loop for your run or make any manual adjustments to the model or ranking
+        after seeing the test queries, you can mark your run as <i>manual</i> and provide a description of the types of alterations
         performed. </p>
-      <p>Further, we expect that only the discovery data is used to assess the expertise of each LLM. If this is the case we 
-        mark these submissions as <i>internal</i>. However, if you wish to use external tools, e.g. LLMs, search engines, data, 
+      <p>Further, we expect that only the discovery data is used to assess the expertise of each LLM. If this is the case we
+        mark these submissions as <i>internal</i>. However, if you wish to use external tools, e.g. LLMs, search engines, data,
         to verify the expertise of each LLM then you should mark your run as <i>external</i>.</p>
-      
+
       <h3>Runs Allowed</h3>
       <p>Each team may submit up to <strong>5 official runs</strong>.</p>
 
       <h3>Submission Deadline</h3>
-      <p><strong>September 2026</strong></p>
-      
+      <p><strong>September 2025</strong></p>
+
       <h3>Submission Portal</h3>
       <p><a href="#" title="Codalab submission">Codalab link TBD</a></p>
-      
+
       <h3>System Description</h3>
       <p>You must provide a short description of your method, including any training data or models used.</p>
     </div>
@@ -216,23 +205,23 @@
         </thead>
         <tbody>
           <tr>
-            <td>July 7, 2026</td>
+            <td>July 7, 2025</td>
             <td>Expertise discovery and development data released</td>
           </tr>
           <tr>
-            <td>September 5, 2026</td>
+            <td>September 5, 2025</td>
             <td>Test queries released</td>
           </tr>
           <tr>
-            <td>September 21, 2026</td>
+            <td>September 21, 2025</td>
             <td>Submission deadline</td>
           </tr>
           <tr>
-            <td>October 2026</td>
+            <td>October 2025</td>
             <td>Evaluation &amp; results shared</td>
           </tr>
           <tr>
-            <td>November 2026</td>
+            <td>November 2025</td>
             <td>TREC conference</td>
           </tr>
         </tbody>
@@ -269,6 +258,11 @@
                     <div class="affiliation">University of Amsterdam, The Netherlands</div>
                 </td>
                 <td>
+                    <img src="img/organizers/peustratiadis.jpeg" alt="Panagiotis Eustratiadis">
+                    <div class="name">Panagiotis Eustratiadis</div>
+                    <div class="affiliation">University of Amsterdam, The Netherlands</div>
+                </td>
+                <td>
                     <img src="img/organizers/msanderson.jpeg" alt="Mark Sanderson">
                     <div class="name">Mark Sanderson</div>
                     <div class="affiliation">RMIT University, Australia</div>
@@ -292,8 +286,13 @@
                     <div class="affiliation">University of Amsterdam, The Netherlands</div>
                 </td>
                 <td>
-                    <img src="img/organizers/gpoerwawinata.svg" alt="Gabrielle Poerwawinata">
-                    <div class="name">Gabrielle Poerwawinata</div>
+                    <img src="img/organizers/jqiao.jpeg" alt="Jingfen Qiao">
+                    <div class="name">Jingfen Qiao</div>
+                    <div class="affiliation">University of Amsterdam, The Netherlands</div>
+                </td>
+                <td>
+                    <img src="img/organizers/vpal.jpeg" alt="Vaishali Pal">
+                    <div class="name">Vaishali Pal</div>
                     <div class="affiliation">University of Amsterdam, The Netherlands</div>
                 </td>
             </tr>
